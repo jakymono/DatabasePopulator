@@ -1,39 +1,27 @@
-package com.LaboratorioIntegrato.DatabasePopulator.model;
+package com.LaboratorioIntegrato.DatabasePopulator.model.api.teams_venues;
+
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-        "get",
-        "parameters",
-        "errors",
-        "results",
-        "paging",
-        "response"
-})
-
-public class Example {
-
+public class Root_venue {
     @JsonProperty("get")
     public String get;
     @JsonProperty("parameters")
-    public Parameters parameters;
+    public Parameters_venue parameters;
     @JsonProperty("errors")
     public List<Object> errors;
     @JsonProperty("results")
     public Integer results;
     @JsonProperty("paging")
-    public Paging paging;
+    public Paging_venue paging;
     @JsonProperty("response")
-    public List<Response> response;
+    public List<Response_venue> response;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
@@ -47,7 +35,7 @@ public class Example {
         this.additionalProperties.put(name, value);
     }
 
-    public List<Response> getResponse() {
+    public List<Response_venue> getResponse() {
         return response;
     }
 }
