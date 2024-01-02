@@ -1,8 +1,9 @@
 package com.LaboratorioIntegrato.DatabasePopulator.controllers;
 
-import com.LaboratorioIntegrato.DatabasePopulator.model.Standing;
-import com.LaboratorioIntegrato.DatabasePopulator.service.CountryService;
+import com.LaboratorioIntegrato.DatabasePopulator.model.db.Squadra;
+import com.LaboratorioIntegrato.DatabasePopulator.service.SquadraService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,16 +13,18 @@ import java.util.List;
 public class provaController
 {
 
-    CountryService countryService;
+    SquadraService squadraService;
     @Autowired
-    public provaController(CountryService countryService) {
-        this.countryService = countryService;
+    public provaController(SquadraService squadraService) {
+        this.squadraService = squadraService;
     }
 
-    @GetMapping("/prova")
-    public List<List<Standing>> getCountry1() {
-
-        return countryService.getClassifica();
-
+    @GetMapping("/squadre")
+    public List<Squadra> getSquadre()
+    {
+        return squadraService.RitornaSquadre();
     }
+
+    @GetMapping("/popolaSquadreStadi")
+    public ResponseEntity<?> popolaSquadreStadi(){return squadraService.SquadretadioSplit();}
 }
