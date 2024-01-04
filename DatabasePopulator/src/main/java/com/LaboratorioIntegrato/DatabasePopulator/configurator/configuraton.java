@@ -24,7 +24,7 @@ public class configuraton {
 
         WebClient webClient = WebClient
                 .builder()
-                .baseUrl("https://v3.football.api-sports.io/teams?league=135&season=2023")
+                .baseUrl("https://v3.football.api-sports.io/status")
                 .defaultCookie("cookieKey", "cookieValue")
                 .exchangeStrategies(strategies)
                 .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)

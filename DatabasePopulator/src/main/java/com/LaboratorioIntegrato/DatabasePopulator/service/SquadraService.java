@@ -4,7 +4,7 @@ import com.LaboratorioIntegrato.DatabasePopulator.interfaces.interfaccia_squadre
 import com.LaboratorioIntegrato.DatabasePopulator.model.api.teams_venues.Response_venue;
 import com.LaboratorioIntegrato.DatabasePopulator.model.api.teams_venues.Root_venue;
 import com.LaboratorioIntegrato.DatabasePopulator.model.api.teams_venues.Team;
-import com.LaboratorioIntegrato.DatabasePopulator.model.db.Squadra;
+import com.LaboratorioIntegrato.DatabasePopulator.model.db.Squadre;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
 
-import java.lang.module.Configuration;
 import java.util.Arrays;
 import java.util.List;
 @Service
@@ -35,19 +34,20 @@ public class SquadraService {
 
 
 
-    public List<Squadra> RitornaSquadre()
+    public List<Squadre> RitornaSquadre()
     {
-        Squadra[] squadreA = interfacciasquadre.RitornaSquadre();
+        Squadre[] squadreA = interfacciasquadre.RitornaSquadre();
         return Arrays.stream(squadreA).toList();
     }
 
 
 
 
-    public List<Response_venue> getSquadreStadi()
+    public List<Response_venue> getSquadreStadi(int league,int season)
     {
+        String uri = "https://v3.football.api-sports.io/teams?league="+league+"&season="+season;
         Flux<Root_venue> SquadreStadiFlux = webClient.get()
-                .uri("https://v3.football.api-sports.io/teams?league=135&season=2022")
+                .uri(uri)
                 .retrieve()
                 .bodyToFlux(Root_venue.class);
         List<Root_venue> tutto = SquadreStadiFlux.collectList().block();
@@ -56,11 +56,11 @@ public class SquadraService {
         return risposta;
     }
 
-    public ResponseEntity<?> SquadretadioSplit()
+    public ResponseEntity<?> SquadretadioSplit(int league,int season)
     {
         try {
 
-            List<Response_venue> risposta = getSquadreStadi();
+            List<Response_venue> risposta = getSquadreStadi(league,season);
             stadioService.MettiStadi(risposta);
 
             MettiSquadre(risposta);
@@ -81,7 +81,7 @@ public class SquadraService {
 
             for (Response_venue risp : risposta) {
                 Team team = risp.team;
-                interfacciasquadre.InserisciSquadra(team.id, team.name, team.code,risp.venue.id, team.country, team.founded,team.logo);
+                interfacciasquadre.save(new Squadre(team.id, team.name,team.code,risp.venue.id , team.country, team.founded,team.national,team.logo));
             }
     }
 

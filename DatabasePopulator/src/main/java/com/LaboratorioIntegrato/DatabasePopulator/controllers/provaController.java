@@ -1,6 +1,6 @@
 package com.LaboratorioIntegrato.DatabasePopulator.controllers;
 
-import com.LaboratorioIntegrato.DatabasePopulator.model.db.Squadra;
+import com.LaboratorioIntegrato.DatabasePopulator.model.db.Squadre;
 import com.LaboratorioIntegrato.DatabasePopulator.service.SquadraService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -20,11 +20,12 @@ public class provaController
     }
 
     @GetMapping("/squadre")
-    public List<Squadra> getSquadre()
+    public List<Squadre> getSquadre()
     {
         return squadraService.RitornaSquadre();
     }
 
     @GetMapping("/popolaSquadreStadi")
-    public ResponseEntity<?> popolaSquadreStadi(){return squadraService.SquadretadioSplit();}
+    public ResponseEntity<?> popolaSquadreStadi(){return squadraService.SquadretadioSplit(135,2023);}
+
 }

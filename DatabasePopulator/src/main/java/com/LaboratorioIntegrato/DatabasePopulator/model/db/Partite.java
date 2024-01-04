@@ -1,9 +1,13 @@
 package com.LaboratorioIntegrato.DatabasePopulator.model.db;
 
-import java.sql.Timestamp;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
+import java.sql.Timestamp;
+@Entity
 public class Partite
 {
+    @Id
     public int id;
     public int id_casa; //fk
     public int id_ospite; //fk
@@ -34,5 +38,8 @@ public class Partite
         this.gol_ospiti_suppl = gol_ospiti_suppl;
         this.rigori_finali_casa = rigori_finali_casa;
         this.rigori_finali_ospiti = rigori_finali_ospiti;
+    }
+
+    public Partite() {
     }
 }

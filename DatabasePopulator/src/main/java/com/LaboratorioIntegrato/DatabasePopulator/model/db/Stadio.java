@@ -25,4 +25,6 @@ public class Stadio {
                 this.immagine = immagine;
         }
 
+        public Stadio() {
+        }
 }

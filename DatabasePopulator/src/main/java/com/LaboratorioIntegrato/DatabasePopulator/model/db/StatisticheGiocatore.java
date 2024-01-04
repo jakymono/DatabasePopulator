@@ -1,70 +1,75 @@
 package com.LaboratorioIntegrato.DatabasePopulator.model.db;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class StatisticheGiocatore
 {
-    public int idGiocatore;
+    @Id
+    public int id_giocatore;
     public int stagione; //FK,PK
-    public int idSquadra; //FK
+    public int id_squadra; //FK
     public int presenze;
-    public int partitaTitolare;
-    public int minutiGiocati;
+    public int partita_titolare;
+    public int minuti_giocati;
     public String posizione;
-    public float mediaVoto;
-    public int cambiDentro;
-    public int cambiFuori;
-    public int tiriTotali;
-    public int tiriPorta;
+    public float media_voto;
+    public int cambi_dentro;
+    public int cambi_fuori;
+    public int tiri_totali;
+    public int tiri_porta;
     public int goal;
     public int assist;
-    public int passaggiTotali;
-    public int passaggiChiave;
+    public int passaggi_totali;
+    public int passaggi_chiave;
     public int contrasti;
     public int blocchi;
     public int intercetti;
-    public int duelliTotali;
-    public int duelliVinti;
-    public int dribblingTotali;
-    public int dribblingRiusciti;
-    public int falliFatti;
-    public int falliSubiti;
-    public int cartelliniGialli;
-    public int doppiGialli;
-    public int cartelliniRossi;
-    public int rigoriSegnati;
-    public int rigoriSbagliati;
-    public int rigoriParati;
+    public int duelli_totali;
+    public int duelli_vinti;
+    public int dribbling_totali;
+    public int dribbling_riusciti;
+    public int falli_fatti;
+    public int falli_subiti;
+    public int cartellini_gialli;
+    public int doppi_gialli;
+    public int cartellini_rossi;
+    public int rigori_segnati;
+    public int rigori_sbagliati;
+    public int rigori_parati;
 
-    public StatisticheGiocatore(int idGiocatore, int stagione, int idSquadra, int presenze, int partitaTitolare, int minutiGiocati, String posizione, float mediaVoto, int cambiDentro, int cambiFuori, int tiriTotali, int tiriPorta, int goal, int assist, int passaggiTotali, int passaggiChiave, int contrasti, int blocchi, int intercetti, int duelliTotali, int duelliVinti, int dribblingTotali, int dribblingRiusciti, int falliFatti, int falliSubiti, int cartelliniGialli, int doppiGialli, int cartelliniRossi, int rigoriSegnati, int rigoriSbagliati, int rigoriParati) {
-        this.idGiocatore = idGiocatore;
+    public StatisticheGiocatore(int id_giocatore, int stagione, int id_squadra, int presenze, int partita_titolare, int minuti_giocati, String posizione, float media_voto, int cambi_dentro, int cambi_fuori, int tiri_totali, int tiri_porta, int goal, int assist, int passaggi_totali, int passaggi_chiave, int contrasti, int blocchi, int intercetti, int duelli_totali, int duelli_vinti, int dribbling_totali, int dribbling_riusciti, int falli_fatti, int falli_subiti, int cartellini_gialli, int doppi_gialli, int cartellini_rossi, int rigori_segnati, int rigori_sbagliati, int rigori_parati) {
+        this.id_giocatore = id_giocatore;
         this.stagione = stagione;
-        this.idSquadra = idSquadra;
+        this.id_squadra = id_squadra;
         this.presenze = presenze;
-        this.partitaTitolare = partitaTitolare;
-        this.minutiGiocati = minutiGiocati;
+        this.partita_titolare = partita_titolare;
+        this.minuti_giocati = minuti_giocati;
         this.posizione = posizione;
-        this.mediaVoto = mediaVoto;
-        this.cambiDentro = cambiDentro;
-        this.cambiFuori = cambiFuori;
-        this.tiriTotali = tiriTotali;
-        this.tiriPorta = tiriPorta;
+        this.media_voto = media_voto;
+        this.cambi_dentro = cambi_dentro;
+        this.cambi_fuori = cambi_fuori;
+        this.tiri_totali = tiri_totali;
+        this.tiri_porta = tiri_porta;
         this.goal = goal;
         this.assist = assist;
-        this.passaggiTotali = passaggiTotali;
-        this.passaggiChiave = passaggiChiave;
+        this.passaggi_totali = passaggi_totali;
+        this.passaggi_chiave = passaggi_chiave;
         this.contrasti = contrasti;
         this.blocchi = blocchi;
         this.intercetti = intercetti;
-        this.duelliTotali = duelliTotali;
-        this.duelliVinti = duelliVinti;
-        this.dribblingTotali = dribblingTotali;
-        this.dribblingRiusciti = dribblingRiusciti;
-        this.falliFatti = falliFatti;
-        this.falliSubiti = falliSubiti;
-        this.cartelliniGialli = cartelliniGialli;
-        this.doppiGialli = doppiGialli;
-        this.cartelliniRossi = cartelliniRossi;
-        this.rigoriSegnati = rigoriSegnati;
-        this.rigoriSbagliati = rigoriSbagliati;
-        this.rigoriParati = rigoriParati;
+        this.duelli_totali = duelli_totali;
+        this.duelli_vinti = duelli_vinti;
+        this.dribbling_totali = dribbling_totali;
+        this.dribbling_riusciti = dribbling_riusciti;
+        this.falli_fatti = falli_fatti;
+        this.falli_subiti = falli_subiti;
+        this.cartellini_gialli = cartellini_gialli;
+        this.doppi_gialli = doppi_gialli;
+        this.cartellini_rossi = cartellini_rossi;
+        this.rigori_segnati = rigori_segnati;
+        this.rigori_sbagliati = rigori_sbagliati;
+        this.rigori_parati = rigori_parati;
     }
 }

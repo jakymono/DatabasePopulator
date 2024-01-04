@@ -3,6 +3,7 @@ package com.LaboratorioIntegrato.DatabasePopulator.service;
 import com.LaboratorioIntegrato.DatabasePopulator.interfaces.interfaccia_stadio;
 import com.LaboratorioIntegrato.DatabasePopulator.model.api.teams_venues.Response_venue;
 import com.LaboratorioIntegrato.DatabasePopulator.model.api.teams_venues.Venue;
+import com.LaboratorioIntegrato.DatabasePopulator.model.db.Stadio;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +22,7 @@ public class StadioService {
 
         for (Response_venue risp : risposta) {
             Venue venue = risp.venue;
-            interfacciaStadio.InserisciStadio(venue.id, venue.name, venue.address, venue.city, venue.capacity, venue.surface, venue.image);
-        }
+            interfacciaStadio.save(new Stadio(venue.id, venue.name, venue.address, venue.city, venue.capacity, venue.surface, venue.image));
+            }
     }
 }
