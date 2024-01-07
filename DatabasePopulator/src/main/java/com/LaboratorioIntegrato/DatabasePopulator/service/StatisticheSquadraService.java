@@ -51,7 +51,7 @@ public class StatisticheSquadraService {
             List<Standing> classifica = classifiche.get(0);
             for(Standing pos : classifica){
 
-                statisticheSquadra.save(new Statistiche_Squadre(pos.team.id,stagione,pos.points,pos.goalsDiff,pos.form, pos.description, pos.all.played,pos.all.win,pos.all.draw,pos.all.lose,pos.all.goals._for,pos.all.goals.against));
+                statisticheSquadra.save(new Statistiche_Squadre(pos.team.id,stagione, pos.rank, pos.points,pos.goalsDiff,pos.form, pos.description, pos.all.played,pos.all.win,pos.all.draw,pos.all.lose,pos.all.goals._for,pos.all.goals.against));
 
             }
             return new ResponseEntity<>(true,HttpStatus.OK);

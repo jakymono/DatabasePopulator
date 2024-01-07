@@ -25,9 +25,18 @@ public class Statistiche_Squadre
         return punti;
     }
 
-    public Statistiche_Squadre(int id_squadra, int stagione, int punti, int differenza_reti, String forma, String descrizione, int partite_giocate, int vinte, int pareggiate, int perse, int gol_fatti, int gol_subiti) {
+    public int getId_sqadra() {
+        return id_sqadra;
+    }
+
+    public int getStagione() {
+        return stagione;
+    }
+
+    public Statistiche_Squadre(int id_squadra, int stagione, int classifica , int punti, int differenza_reti, String forma, String descrizione, int partite_giocate, int vinte, int pareggiate, int perse, int gol_fatti, int gol_subiti) {
         this.id_sqadra = id_squadra;
         this.stagione = stagione;
+        this.classifica = classifica;
         this.punti = punti;
         this.differenza_reti = differenza_reti;
         this.forma = forma;

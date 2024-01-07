@@ -1,7 +1,12 @@
 package com.LaboratorioIntegrato.DatabasePopulator.model.db;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Eventi
 {
+    @Id
     public int id;
     public int minuto;
     public int id_squadra; //fk

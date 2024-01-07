@@ -1,6 +1,7 @@
 package com.LaboratorioIntegrato.DatabasePopulator.controllers;
 
 import com.LaboratorioIntegrato.DatabasePopulator.service.GiocatoreService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -12,6 +13,7 @@ public class GiocatoriController {
 
     GiocatoreService giocatoreService;
 
+    @Autowired
     public GiocatoriController(GiocatoreService giocatoreService) {
         this.giocatoreService = giocatoreService;
     }

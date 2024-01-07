@@ -1,7 +1,12 @@
 package com.LaboratorioIntegrato.DatabasePopulator.model.db;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Campionati
 {
+    @Id
     public int id;
     public String nome;
     public String paese;
