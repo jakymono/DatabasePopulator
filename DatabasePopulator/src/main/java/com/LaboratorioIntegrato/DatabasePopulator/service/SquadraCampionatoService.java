@@ -31,12 +31,10 @@ public class SquadraCampionatoService {
 
 
 
-    public ResponseEntity<?> CollegamentoSquadreCampionato()
+    public ResponseEntity<?> CollegamentoSquadreCampionato(int stagione,int campionato)
     {
 
         try {
-            int stagione = 2023;
-            int campionato = 135;
 
             List<Squadre> squadre = interfacciaSquadre.findAll();
             List<Statistiche_Squadre> stats= interfacciaStatisticheSquadra.findAll();
@@ -44,13 +42,12 @@ public class SquadraCampionatoService {
             for(Squadre sqa: squadre){
 
                 Statistiche_Squadre stat = stats.stream()
-                        .filter(oggetto -> oggetto.getId_sqadra() == sqa.id && oggetto.getStagione() == stagione)
+                        .filter(oggetto -> oggetto.getId_squadra() == sqa.id && oggetto.getStagione() == stagione)
                         .findFirst()
                         .orElse(null);
 
                 if(stat != null){
 
-                    System.out.println(sqa.id);
                     interfacciaSquadreCampionato.save(new Campionato_squadre(campionato,sqa.id,stagione));
 
                 }

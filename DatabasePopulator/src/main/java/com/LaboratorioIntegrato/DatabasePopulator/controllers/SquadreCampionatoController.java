@@ -21,7 +21,7 @@ public class SquadreCampionatoController {
     @GetMapping("/popolaSquadreCampionati")
     public ResponseEntity<?> popolaSquadreCampionati() {
 
-        return squadraCampionatoService.CollegamentoSquadreCampionato();
+        return squadraCampionatoService.CollegamentoSquadreCampionato(2023,135);
 
     }
 
