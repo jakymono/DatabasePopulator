@@ -41,19 +41,17 @@ public class PartitaService {
 
     public ResponseEntity<?> MettiPartite(int league, int season){
 
-        List<Integer> partit = new ArrayList<>();
         try{
-
 
             List<Response> partite = getPartite(league, season);
             for(Response par:partite){
 
-                    partit.add(par.fixture.id);
+
                     if(par.fixture.venue.id==20299){par.fixture.venue.id=20416;}
-                    interfacciaPartite.save(new Partite(par.fixture.id,par.teams.home.id,par.teams.away.id,par.fixture.venue.id,league,par.fixture.referee,new Timestamp(par.fixture.timestamp* 1000L),par.fixture.status._short,par.goals.home,par.goals.away,par.score.extratime.home,par.score.extratime.away,par.score.penalty.home,par.score.penalty.away));
+                    interfacciaPartite.save(new Partite(par.fixture.id,par.teams.home.id,par.teams.away.id,par.fixture.venue.id,league,par.fixture.referee,par.league.round,season,new Timestamp(par.fixture.timestamp* 1000L),par.fixture.status._short,par.goals.home,par.goals.away,par.score.extratime.home,par.score.extratime.away,par.score.penalty.home,par.score.penalty.away));
 
             }
-            return new ResponseEntity<>(partit.size(),HttpStatus.OK);
+            return new ResponseEntity<>(true,HttpStatus.OK);
         }
         catch (Exception e){
             return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);

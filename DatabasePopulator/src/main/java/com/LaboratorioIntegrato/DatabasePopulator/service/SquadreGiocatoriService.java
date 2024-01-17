@@ -65,6 +65,7 @@ public class SquadreGiocatoriService {
 
             for(Campionato_squadre sqa : squadreStagione)
             {
+
                 List<Player> giocatori = getGiocatoriSquadra(sqa.id_squadra);
                 System.out.println("inizio attesa 10 sec");
                 TimeUnit.SECONDS.sleep(10);

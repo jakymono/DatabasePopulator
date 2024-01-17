@@ -1,5 +1,5 @@
 
-package com.LaboratorioIntegrato.DatabasePopulator.model.api.teamstats;
+package com.LaboratorioIntegrato.DatabasePopulator.model.api.events;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -13,27 +13,38 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "played",
-    "win",
-    "draw",
-    "lose",
-    "goals"
+    "elapsed",
+    "extra"
 })
 
-public class Away {
+public class Time {
 
-    @JsonProperty("played")
-    public Integer played;
-    @JsonProperty("win")
-    public Integer win;
-    @JsonProperty("draw")
-    public Integer draw;
-    @JsonProperty("lose")
-    public Integer lose;
-    @JsonProperty("goals")
-    public Goals__1 goals;
+    @JsonProperty("elapsed")
+    public Integer elapsed;
+    @JsonProperty("extra")
+    public Integer extra;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
+
+    @JsonProperty("elapsed")
+    public Integer getElapsed() {
+        return elapsed;
+    }
+
+    @JsonProperty("elapsed")
+    public void setElapsed(Integer elapsed) {
+        this.elapsed = elapsed;
+    }
+
+    @JsonProperty("extra")
+    public Integer getExtra() {
+        return extra;
+    }
+
+    @JsonProperty("extra")
+    public void setExtra(Integer extra) {
+        this.extra = extra;
+    }
 
     @JsonAnyGetter
     public Map<String, Object> getAdditionalProperties() {

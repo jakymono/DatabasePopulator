@@ -24,7 +24,7 @@ public class SquadreGiocatoriController {
 
     @GetMapping("/popolaGiocatorieSquadre")
     public ResponseEntity<?> popolaGiocatorieStatistiche(){
-        return squadreGiocatoriService.CollegaSquadreGiocatori(2023                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             );
+        return squadreGiocatoriService.CollegaSquadreGiocatori(2023);
     }
 
 }
