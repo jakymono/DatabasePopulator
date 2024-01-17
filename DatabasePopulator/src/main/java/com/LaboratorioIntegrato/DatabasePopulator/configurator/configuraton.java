@@ -7,7 +7,6 @@ import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.client.ExchangeStrategies;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import java.util.Collections;
 @Configuration
 public class configuraton {
 
@@ -25,7 +24,7 @@ public class configuraton {
 
         WebClient webClient = WebClient
                 .builder()
-                .baseUrl("https://v3.football.api-sports.io/standings?league=135&season=2023")
+                .baseUrl("https://v3.football.api-sports.io/status")
                 .defaultCookie("cookieKey", "cookieValue")
                 .exchangeStrategies(strategies)
                 .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
@@ -33,5 +32,7 @@ public class configuraton {
                 .build();
         return webClient;
 }
+
+
 
 }
