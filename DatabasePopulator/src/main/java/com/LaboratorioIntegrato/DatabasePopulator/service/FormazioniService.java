@@ -64,7 +64,7 @@ public class FormazioniService {
                 if(giocatore.isPresent()){foto = giocatore.get().foto;}
                 else{foto = "foto non presente";}
 
-                formazione_casa += gio.id+"-"+gio.name+"-"+gio.number+"-"+gio.pos+"-"+foto+",";
+                formazione_casa += gio.id+";"+gio.name+";"+gio.number+";"+gio.pos+";"+foto+",";
             }
 
             String formazione_ospiti = "";
@@ -78,7 +78,7 @@ public class FormazioniService {
                 if(giocatore.isPresent()){foto = giocatore.get().foto;}
                 else{foto = "foto non presente";}
 
-                formazione_ospiti += gio.id+"-"+gio.name+"-"+gio.number+"-"+gio.pos+"-"+foto+",";
+                formazione_ospiti += gio.id+";"+gio.name+";"+gio.number+";"+gio.pos+";"+foto+",";
             }
 
             String sostituti_casa = "";
@@ -92,7 +92,7 @@ public class FormazioniService {
                 if(giocatore.isPresent()){foto = giocatore.get().foto;}
                 else{foto = "foto non presente";}
 
-                sostituti_casa += gio.id+"-"+gio.name+"-"+gio.number+"-"+gio.pos+"-"+foto+",";
+                sostituti_casa += gio.id+";"+gio.name+";"+gio.number+";"+gio.pos+";"+foto+",";
             }
 
             String sostituti_ospiti = "";
@@ -106,10 +106,10 @@ public class FormazioniService {
                 if(giocatore.isPresent()){foto = giocatore.get().foto;}
                 else{foto = "foto non presente";}
 
-                sostituti_ospiti += gio.id+"-"+gio.name+"-"+gio.number+"-"+gio.pos+"-"+foto+",";
+                sostituti_ospiti += gio.id+";"+gio.name+";"+gio.number+";"+gio.pos+";"+foto+",";
             }
-            String allenatore_casa = casa.coach.name+"-"+casa.coach.photo;
-            String allenatore_ospite = ospiti.coach.name+"-"+ospiti.coach.photo;
+            String allenatore_casa = casa.coach.name+";"+casa.coach.photo;
+            String allenatore_ospite = ospiti.coach.name+";"+ospiti.coach.photo;
 
             interfacciaFormazioni.save(new Formazioni(id_partita,casa.team.id,ospiti.team.id,formazione_casa,formazione_ospiti,sostituti_casa,sostituti_ospiti,allenatore_casa,allenatore_ospite,casa.formation,ospiti.formation));
         } catch (Exception e) {
