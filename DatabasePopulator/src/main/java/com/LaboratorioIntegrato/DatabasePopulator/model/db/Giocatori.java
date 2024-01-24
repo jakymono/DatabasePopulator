@@ -5,6 +5,9 @@ import jakarta.persistence.Id;
 
 import java.sql.Date;
 
+/**
+ * model per la tabella del db
+ */
 @Entity
 public class Giocatori
 {

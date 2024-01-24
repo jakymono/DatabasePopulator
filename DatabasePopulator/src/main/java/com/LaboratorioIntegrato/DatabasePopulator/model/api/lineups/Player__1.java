@@ -15,6 +15,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "grid"
 })
 
+/**
+ * classe model per le api
+ */
 public class Player__1 {
 
     @JsonProperty("id")

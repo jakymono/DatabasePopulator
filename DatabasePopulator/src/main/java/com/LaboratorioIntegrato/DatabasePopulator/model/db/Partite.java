@@ -3,6 +3,9 @@ package com.LaboratorioIntegrato.DatabasePopulator.model.db;
 import jakarta.persistence.*;
 import java.sql.Timestamp;
 
+/**
+ * model per la tabella del db
+ */
 @Entity
 public class Partite
 {

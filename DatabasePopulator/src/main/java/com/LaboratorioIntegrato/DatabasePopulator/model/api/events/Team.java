@@ -18,6 +18,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "logo"
 })
 
+/**
+ * classe model per le api
+ */
 public class Team {
 
     @JsonProperty("id")

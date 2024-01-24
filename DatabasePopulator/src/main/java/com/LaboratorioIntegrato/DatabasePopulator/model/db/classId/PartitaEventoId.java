@@ -3,6 +3,9 @@ package com.LaboratorioIntegrato.DatabasePopulator.model.db.classId;
 import java.io.Serializable;
 import java.util.Objects;
 
+/**
+ * model per la primary key di partita_evento
+ */
 public class PartitaEventoId implements Serializable {
 
     private int id_partita;

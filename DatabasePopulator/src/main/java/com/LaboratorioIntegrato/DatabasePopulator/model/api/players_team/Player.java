@@ -1,14 +1,10 @@
 
 package com.LaboratorioIntegrato.DatabasePopulator.model.api.players_team;
 
+import com.fasterxml.jackson.annotation.*;
+
 import java.util.LinkedHashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -20,6 +16,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "photo"
 })
 
+/**
+ * classe model per le api
+ */
 public class Player {
 
     @JsonProperty("id")

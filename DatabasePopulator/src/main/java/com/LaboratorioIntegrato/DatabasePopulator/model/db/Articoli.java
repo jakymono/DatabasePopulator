@@ -4,6 +4,12 @@ import jakarta.persistence.*;
 
 import java.util.Date;
 
+/**
+ * model per la tabella del db
+ */
+/**
+ * model per la tabella del db
+ */
 @Entity
 public class Articoli {
 

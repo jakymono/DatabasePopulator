@@ -16,6 +16,9 @@ import reactor.core.publisher.Flux;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Service che gestisce il popolamento di Formazioni vedi : {@link Formazioni}
+ */
 @Service
 public class FormazioniService {
 
@@ -32,6 +35,11 @@ public class FormazioniService {
         this.interfacciaGiocatori = interfacciaGiocatori;
     }
 
+    /**
+     * metodo che prende dalle api le formazioni con il formato delle api vedi: ˘{@link Lineups}
+     * @param fixture int id della partita
+     * @return Lista di formazioni
+     */
     public List<Lineups> getFormazioni(int fixture)
     {
         String uri = "https://v3.football.api-sports.io/fixtures/lineups?fixture="+fixture;
@@ -42,6 +50,12 @@ public class FormazioniService {
         return PartiteFlux.collectList().block();
     }
 
+    /**
+     * prende i dati da {@link #getFormazioni(int)} e li trasforma nel modello per il db vedi {@link Formazioni}
+     * se le formazioni mancano inserisce una stringa che avverte che quei dati mancano
+     * @param fixture int id della partita
+     * @return ResponseEntity con body true se tutto è andato bene o il messaggio di errore in caso contratrio
+     */
     public ResponseEntity<?> mettiFormazioni(int fixture){
 
         try {

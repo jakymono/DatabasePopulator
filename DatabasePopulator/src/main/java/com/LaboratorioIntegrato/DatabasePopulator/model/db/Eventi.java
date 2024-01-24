@@ -2,6 +2,9 @@ package com.LaboratorioIntegrato.DatabasePopulator.model.db;
 
 import jakarta.persistence.*;
 
+/**
+ * model per la tabella del db
+ */
 @Entity
 public class Eventi
 {

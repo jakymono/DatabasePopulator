@@ -17,6 +17,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "extra"
 })
 
+/**
+ * classe model per le api
+ */
 public class Time {
 
     @JsonProperty("elapsed")

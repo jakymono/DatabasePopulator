@@ -20,6 +20,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "score"
 })
 
+/**
+ * classe model per le api
+ */
 public class Response {
 
     @JsonProperty("fixture")

@@ -18,6 +18,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "city"
 })
 
+/**
+ * classe model per le api
+ */
 public class Venue {
 
     @JsonProperty("id")

@@ -17,6 +17,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "total"
 })
 
+/**
+ * classe model per le api
+ */
 public class Paging {
 
     @JsonProperty("current")

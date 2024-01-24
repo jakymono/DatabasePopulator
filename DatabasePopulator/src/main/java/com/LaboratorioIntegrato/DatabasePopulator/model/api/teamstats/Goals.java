@@ -17,6 +17,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "against"
 })
 
+/**
+ * classe model per le api
+ */
 public class Goals {
 
     @JsonProperty("for")

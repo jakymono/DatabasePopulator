@@ -17,6 +17,12 @@ import com.fasterxml.jackson.annotation.*;
     "response"
 })
 
+/**
+ * classe model per le api
+ */
+/**
+ * classe model per le api
+ */
 public class Players {
 
     @JsonProperty("get")

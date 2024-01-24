@@ -23,6 +23,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "status"
 })
 
+/**
+ * classe model per le api
+ */
 public class Fixture {
 
     @JsonProperty("id")

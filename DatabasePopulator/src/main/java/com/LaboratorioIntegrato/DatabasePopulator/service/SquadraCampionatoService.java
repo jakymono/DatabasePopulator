@@ -13,6 +13,9 @@ import com.LaboratorioIntegrato.DatabasePopulator.model.db.Campionato_squadre;
 
 import java.util.List;
 
+/**
+ * Servizio che popola la tabella relazionale campionato_squadre vedi : {@link Campionato_squadre}
+ */
 @Service
 public class SquadraCampionatoService {
 
@@ -29,8 +32,12 @@ public class SquadraCampionatoService {
     }
 
 
-
-
+    /**
+     * prende tutte le squadre e le collega al campionato dato in input
+     * @param stagione int anno della stagione corrente
+     * @param campionato int id campionato
+     * @return
+     */
     public ResponseEntity<?> CollegamentoSquadreCampionato(int stagione,int campionato)
     {
 

@@ -27,6 +27,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "update"
 })
 
+/**
+ * classe model per le api
+ */
 public class Standing {
 
     @JsonProperty("rank")

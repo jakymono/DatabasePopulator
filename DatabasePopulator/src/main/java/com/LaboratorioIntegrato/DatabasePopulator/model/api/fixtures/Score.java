@@ -19,6 +19,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "penalty"
 })
 
+/**
+ * classe model per le api
+ */
 public class Score {
 
     @JsonProperty("halftime")

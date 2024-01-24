@@ -1,0 +1,15 @@
+com.LaboratorioIntegrato.DatabasePopulator
+com.LaboratorioIntegrato.DatabasePopulator.configurator
+com.LaboratorioIntegrato.DatabasePopulator.controllers
+com.LaboratorioIntegrato.DatabasePopulator.interfaces
+com.LaboratorioIntegrato.DatabasePopulator.model.api.events
+com.LaboratorioIntegrato.DatabasePopulator.model.api.fixtures
+com.LaboratorioIntegrato.DatabasePopulator.model.api.lineups
+com.LaboratorioIntegrato.DatabasePopulator.model.api.players
+com.LaboratorioIntegrato.DatabasePopulator.model.api.players_team
+com.LaboratorioIntegrato.DatabasePopulator.model.api.round
+com.LaboratorioIntegrato.DatabasePopulator.model.api.teams_venues
+com.LaboratorioIntegrato.DatabasePopulator.model.api.teamstats
+com.LaboratorioIntegrato.DatabasePopulator.model.db
+com.LaboratorioIntegrato.DatabasePopulator.model.db.classId
+com.LaboratorioIntegrato.DatabasePopulator.service

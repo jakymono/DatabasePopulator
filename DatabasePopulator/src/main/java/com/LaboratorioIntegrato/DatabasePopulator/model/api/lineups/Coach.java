@@ -13,6 +13,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "photo"
 })
 
+/**
+ * classe model per le api
+ */
 public class Coach {
 
     @JsonProperty("id")

@@ -14,6 +14,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "colors"
 })
 
+/**
+ * classe model per le api
+ */
 public class Team {
 
     @JsonProperty("id")

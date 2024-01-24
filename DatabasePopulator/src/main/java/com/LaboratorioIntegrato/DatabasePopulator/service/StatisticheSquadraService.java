@@ -15,6 +15,9 @@ import reactor.core.publisher.Flux;
 
 import java.util.List;
 
+/**
+ * Service per popolare statistiche_squadre vedi:{@link Statistiche_Squadre}
+ */
 @Service
 public class StatisticheSquadraService {
 
@@ -27,6 +30,12 @@ public class StatisticheSquadraService {
         this.statisticheSquadra = statisticheSquadra;
     }
 
+    /**
+     * prende i dati della classifica dalle api vedi:{@link TeamStats}
+     * @param league int id campionato
+     * @param season int anno stagione corrente
+     * @return un oggetto {@link League}
+     */
     public League getStatSquadre(int league,int season)
     {
         String uri = "https://v3.football.api-sports.io/standings?league="+league+"&season="+season;
@@ -42,6 +51,12 @@ public class StatisticheSquadraService {
         return lega;
     }
 
+    /**
+     * prende i dati da {@link #getStatSquadre(int, int)} e popola squadre_statistiche
+     * @param league int id campionato
+     * @param season int anno stagione corrente
+     * @return ResponseEntity con body true se tutto è andato bene o il messaggio di errore in caso contratrio
+     */
     public ResponseEntity<?> MettiStatistiche(int league,int season)
     {
         try{
