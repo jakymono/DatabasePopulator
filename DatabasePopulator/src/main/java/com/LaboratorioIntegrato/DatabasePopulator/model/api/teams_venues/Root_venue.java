@@ -9,6 +9,9 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * classe model per le api
+ */
 public class Root_venue {
     @JsonProperty("get")
     public String get;

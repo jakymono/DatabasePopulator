@@ -18,6 +18,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "elapsed"
 })
 
+/**
+ * classe model per le api
+ */
 public class Status {
 
     @JsonProperty("long")

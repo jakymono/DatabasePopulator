@@ -16,11 +16,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
 
-import javax.swing.*;
 import java.sql.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Service che gestisce il popolamento di giocatori vedi : {@link Giocatori}
+ */
 @Service
 public class GiocatoreService {
     @Autowired
@@ -39,6 +41,13 @@ public class GiocatoreService {
         this.interfacciaSquadre = interfacciaSquadre;
     }
 
+    /**
+     * metodo che prende i giocatori e le statistiche dei suddetti dalle api ne formato {@link Players}
+     * @param league int del campionato
+     * @param season int anno della stagione
+     * @param page int pagina dei risultati
+     * @return lista di giocatori nel formato delle api
+     */
     public List<Players> getGiocatori(int league, int season, int page)
     {
         String uri = "https://v3.football.api-sports.io/players?league="+league+"&season="+season+"&page="+page;
@@ -49,6 +58,12 @@ public class GiocatoreService {
         return PartiteFlux.collectList().block();
     }
 
+    /**
+     * metodo che per ogni pagina di risposta delle api trasforma i dati nel model per il db vedi : {@link Giocatori} e {@link Statistiche_Giocatori}
+     * @param league int id del campionato
+     * @param season int anno della stagione
+     * @return ResponseEntity con body true se tutto è andato bene o il messaggio di errore in caso contratrio
+     */
     public ResponseEntity<?> MettiGiocatori(int league,int season){
 
 

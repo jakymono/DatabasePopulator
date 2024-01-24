@@ -8,6 +8,10 @@ import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
+/**
+ * servizio per popolare la tabella stadio del db vedi:{@link Stadio}
+ */
 @Service
 public class StadioService {
 
@@ -17,7 +21,10 @@ public class StadioService {
         this.interfacciaStadio = interfacciaStadio;
     }
 
-
+    /**
+     * inserisce gli stadi nella tabella stadi del db vedi:{@link Stadio}
+     * @param risposta lista con stadi e squadre
+     */
     public void MettiStadi(@NotNull List<Response_venue> risposta) {
 
         for (Response_venue risp : risposta) {

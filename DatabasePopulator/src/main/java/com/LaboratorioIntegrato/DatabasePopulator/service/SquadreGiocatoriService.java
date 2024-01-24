@@ -19,6 +19,9 @@ import reactor.core.publisher.Flux;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+/**
+ *  Servizio per popolare la tabella squadre_giocatori vedi:{@link Squadre_giocatori}
+ */
 @Service
 public class SquadreGiocatoriService {
 
@@ -38,9 +41,11 @@ public class SquadreGiocatoriService {
         this.interfacciaGiocatori = interfacciaGiocatori;
     }
 
-
-
-
+    /**
+     * metodo che prende i giocatori del team dato nei parametri
+     * @param team int id squadra
+     * @return List di giocatrori vedi:{@link Player}
+     */
     public List<Player> getGiocatoriSquadra(int team)
     {
         String uri = "https://v3.football.api-sports.io/players/squads?team="+team;
@@ -53,6 +58,12 @@ public class SquadreGiocatoriService {
         return risposta.get(0).players;
     }
 
+    /**
+     * per ogni squadra chiama {@link #getGiocatoriSquadra(int)} e aggiuge quei giocatori
+     * alla tabella squadre_giocatori
+     * @param stagione int anno stagione corrente
+     * @return ResponseEntity con body true se tutto è andato bene o il messaggio di errore in caso contratrio
+     */
     public ResponseEntity<?> CollegaSquadreGiocatori(int stagione)
     {
 

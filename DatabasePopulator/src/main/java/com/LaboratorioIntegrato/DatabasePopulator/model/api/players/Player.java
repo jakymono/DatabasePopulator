@@ -3,6 +3,12 @@ package com.LaboratorioIntegrato.DatabasePopulator.model.api.players;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
+/**
+ * classe model per le api
+ */
+/**
+ * classe model per le api
+ */
 public class Player{
     public int id;
     public String name;

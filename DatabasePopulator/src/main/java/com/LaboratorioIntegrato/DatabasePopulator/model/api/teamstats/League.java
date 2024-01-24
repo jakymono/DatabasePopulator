@@ -23,6 +23,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "standings"
 })
 
+/**
+ * classe model per le api
+ */
 public class League {
 
     @JsonProperty("id")

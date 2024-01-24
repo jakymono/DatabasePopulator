@@ -11,6 +11,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "player"
 })
 
+/**
+ * classe model per le api
+ */
 public class StartXI {
 
     @JsonProperty("player")

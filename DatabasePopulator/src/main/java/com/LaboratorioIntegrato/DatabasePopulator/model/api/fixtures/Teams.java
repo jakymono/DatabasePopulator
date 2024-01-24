@@ -17,6 +17,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "away"
 })
 
+/**
+ * classe model per le api
+ */
 public class Teams {
 
     @JsonProperty("home")

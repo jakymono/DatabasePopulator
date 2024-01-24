@@ -12,6 +12,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "goalkeeper"
 })
 
+/**
+ * classe model per le api
+ */
 public class Colors {
 
     @JsonProperty("player")

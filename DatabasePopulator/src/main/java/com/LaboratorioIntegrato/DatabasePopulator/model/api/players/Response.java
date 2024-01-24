@@ -10,6 +10,12 @@ import java.util.List;
         "player",
         "statistics"
 })
+/**
+ * classe model per le api
+ */
+/**
+ * classe model per le api
+ */
 public class Response{
     @JsonProperty("player")
     public Player player;

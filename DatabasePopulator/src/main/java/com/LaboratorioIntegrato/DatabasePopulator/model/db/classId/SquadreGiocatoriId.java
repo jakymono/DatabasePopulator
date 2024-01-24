@@ -1,10 +1,11 @@
 package com.LaboratorioIntegrato.DatabasePopulator.model.db.classId;
 
-import jakarta.persistence.Id;
-
 import java.io.Serializable;
 import java.util.Objects;
 
+/**
+ * model per la primary key di squadre_giocatori
+ */
 public class SquadreGiocatoriId implements Serializable {
 
     public int id_squadra;

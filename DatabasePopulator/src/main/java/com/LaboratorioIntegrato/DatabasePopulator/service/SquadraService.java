@@ -13,10 +13,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
 
-import java.util.Arrays;
 import java.util.List;
 @Service
-
+/**
+ * Servizio per gestire il popolamendo della tabella squadre vedi : {@link Squadre}
+ */
 public class SquadraService {
 
     @Autowired
@@ -31,18 +32,12 @@ public class SquadraService {
 
     }
 
-
-
-
-    public List<Squadre> RitornaSquadre()
-    {
-        Squadre[] squadreA = interfacciasquadre.RitornaSquadre();
-        return Arrays.stream(squadreA).toList();
-    }
-
-
-
-
+    /**
+     * il metodo prende i dati di stadi e squadre dalle api vedi : {@link Root_venue}
+     * @param league int id campionato
+     * @param season int anno stagione corrente
+     * @return Lista con i dati di stadi e squadre nel formato di {@link Response_venue}
+     */
     public List<Response_venue> getSquadreStadi(int league,int season)
     {
         String uri = "https://v3.football.api-sports.io/teams?league="+league+"&season="+season;
@@ -56,6 +51,12 @@ public class SquadraService {
         return risposta;
     }
 
+    /**
+     * dato che le api restuiscono stadi e squadre insieme questo metodo manda i dati a {@link #MettiSquadre(List)} e  {@link StadioService#MettiStadi(List)}
+     * @param league int id campionato
+     * @param season int anno stagione corrente
+     * @return ResponseEntity con body true se tutto è andato bene o il messaggio di errore in caso contratrio
+     */
     public ResponseEntity<?> SquadretadioSplit(int league,int season)
     {
         try {
@@ -77,6 +78,10 @@ public class SquadraService {
     }
 
 
+    /**
+     * popola la tabella del db Squadre con le squadre in risposta
+     * @param risposta Lista di stadi e Squadre
+     */
     public void MettiSquadre(@NotNull List<Response_venue> risposta) {
 
             for (Response_venue risp : risposta) {

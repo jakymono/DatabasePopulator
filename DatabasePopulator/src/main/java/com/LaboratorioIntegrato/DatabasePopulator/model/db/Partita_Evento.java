@@ -5,6 +5,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.IdClass;
 
+/**
+ * model per la tabella del db
+ */
 @Entity
 @IdClass(PartitaEventoId.class)
 public class Partita_Evento {

@@ -19,6 +19,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "winner"
 })
 
+/**
+ * classe model per le api
+ */
 public class Home {
 
     @JsonProperty("id")

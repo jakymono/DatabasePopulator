@@ -7,9 +7,14 @@ import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.client.ExchangeStrategies;
 import org.springframework.web.reactive.function.client.WebClient;
 
+
 @Configuration
 public class configuraton {
 
+    /**
+     * Metodo di configurazione del Webclient
+     * @return WebClient
+     */
     @Bean
     public WebClient webclient() {
 
@@ -22,7 +27,7 @@ public class configuraton {
         headers.add("x-rapidapi-host","v3.football.api-sports.io");
         headers.add("x-rapidapi-key","0300e3edab592b023d02b792198506f0");
 
-        WebClient webClient = WebClient
+        return WebClient
                 .builder()
                 .baseUrl("https://v3.football.api-sports.io/status")
                 .defaultCookie("cookieKey", "cookieValue")
@@ -30,7 +35,6 @@ public class configuraton {
                 .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                 .defaultHeaders(h -> h.addAll(headers))
                 .build();
-        return webClient;
 }
 
 

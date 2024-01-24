@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * Controller per {@link FormazioniService}
+ */
 @RestController
 @CrossOrigin
 public class FormazioniController {
@@ -19,6 +22,11 @@ public class FormazioniController {
         this.formazioniService = formazioniService;
     }
 
+    /**
+     * Metodo che chiama mettiFormazioni() {@link FormazioniService} e popola la tabella formazioni
+     * @param fixture id della partita da popolare
+     * @return ResponseEntity con true se tutto è andato bene e con il messaggio del errore se ci sono stati errori
+     */
     @GetMapping("/lineups")
     public ResponseEntity<?> Formazioni(@RequestParam int fixture) {
 

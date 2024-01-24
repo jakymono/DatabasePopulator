@@ -12,9 +12,11 @@ import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
 
 import java.sql.Timestamp;
-import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * servizio che gestisce il popolamento della tabella partite vedi:{@link Partite}
+ */
 @Service
 public class PartitaService {
 
@@ -27,6 +29,12 @@ public class PartitaService {
         this.interfacciaPartite = interfacciaPartite;
     }
 
+    /**
+     * metodo che prende le partite dalle api con il formato di {@link Fixtures}
+     * @param league int del campionato
+     * @param season int anno della stagione
+     * @return lista delle partite nel formato delle api
+     */
     public List<Response> getPartite(int league, int season)
     {
         String uri = "https://v3.football.api-sports.io/fixtures?league="+league+"&season="+season;
@@ -39,6 +47,13 @@ public class PartitaService {
         return risposta;
     }
 
+
+    /**
+     * metodo che prende le partite da {@link #getPartite(int, int)} e le trasforma nel model per il db vedi {@link Partite}
+     * @param league int id del campionato
+     * @param season int anno della stagione
+     * @return ResponseEntity con body true se tutto è andato bene o il messaggio di errore in caso contratrio
+     */
     public ResponseEntity<?> MettiPartite(int league, int season){
 
         try{

@@ -3,6 +3,9 @@ package com.LaboratorioIntegrato.DatabasePopulator.model.db.classId;
 import java.io.Serializable;
 import java.util.Objects;
 
+/**
+ * model per la primary key di campionato_squadre
+ */
 public class CampionatoSquadreId implements Serializable {
     private int id_squadra;
 

@@ -17,6 +17,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "second"
 })
 
+/**
+ * classe model per le api
+ */
 public class Periods {
 
     @JsonProperty("first")

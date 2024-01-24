@@ -11,6 +11,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "fixture"
 })
 
+/**
+ * classe model per le api
+ */
 public class Parameters {
 
     @JsonProperty("fixture")

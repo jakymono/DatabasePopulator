@@ -16,6 +16,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "substitutes"
 })
 
+/**
+ * classe model per le api
+ */
 public class Response {
 
     @JsonProperty("team")

@@ -3,6 +3,9 @@ package com.LaboratorioIntegrato.DatabasePopulator.model.db;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
+/**
+ * model per la tabella del db
+ */
 @Entity
 public class Squadre {
         @Id

@@ -17,6 +17,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "season"
 })
 
+/**
+ * classe model per le api
+ */
 public class Parameters {
 
     @JsonProperty("league")
